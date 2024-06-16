@@ -1,0 +1,46 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "(gdb Ubuntu) Launch Custom by Deviac",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/target/debug/minigrep",
+            "args": ["rUsT", "${workspaceFolder}/Rust.txt"],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "preLaunchTask": "rust: cargo build",
+            "environment": [
+                {"name": "IGNORE_CASE", "value": "false"}
+            ],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Set Disassembly Flavor to Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "(Windows) Launch Custom By Deviac",
+            "type": "cppvsdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/target/debug/minigrep.exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "environment": [],
+            "console": "externalTerminal"
+        }
+    ]
+}
